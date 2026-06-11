@@ -459,6 +459,5 @@ func (r *MemcachedReconciler) SetupWithManager(mgr ctrl.Manager) error {
 		// owned and managed by this controller, it will trigger reconciliation, ensuring that the cluster
 		// state aligns with the desired state. See that the ownerRef was set when the Deployment was created.
 		Owns(&appsv1.Deployment{}).
-		WithOptions(controller.Options{MaxConcurrentReconciles: 2}).
 		Complete(r)
 }
